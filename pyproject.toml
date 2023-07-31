@@ -76,7 +76,7 @@ pytest = "^7.4.0"
 pytest-cov = "^4.0.0"
 codecov = "^2.1.13"
 pytest-asyncio = "^0.21.1"
-fastapi = ">=0.70.1,<=0.100.0"
+fastapi = ">=0.70.1,<=0.100.1"
 flake8 = "^3.9.2"
 flake8-black = "^0.3.6"
 flake8-bugbear = "^23.3.12"
@@ -90,7 +90,7 @@ flake8-expression-complexity = "^0.0.11"
 
 # types
 mypy = "^0.982"
-types-ujson = "^5.7.0"
+types-ujson = "^5.8.0"
 types-PyMySQL = "^1.1.0"
 types-ipaddress = "^1.0.1"
 types-enum34 = "^1.1.1"
@@ -102,7 +102,7 @@ types-requests = "^2.31.0"
 types-toml = "^0.10.8"
 
 # Documantation
-mkdocs = "^1.4.3"
+mkdocs = "^1.5.1"
 mkdocs-material = ">=8.1.2,<9.2"
 mkdocs-material-extensions = "^1.1"
 mkdocstrings = {version = "==0.22.0", extras = ["python"]}
@@ -114,7 +114,7 @@ dataclasses = { version = ">=0.6.0,<0.8 || >0.8,<1.0.0" }
 # Performance testing
 yappi = "^1.4.0"
 pytest-benchmark = "^4.0.0"
-nest-asyncio = "^1.5.6"
+nest-asyncio = "^1.5.7"
 
 pre-commit = "^2.21.0"
 
