@@ -241,7 +241,7 @@ class String(ModelFieldFactory, str):
         :return: initialized column with proper options
         :rtype: sqlalchemy Column
         """
-        return sqlalchemy.String(length=kwargs.get("max_length"))
+        return sqlalchemy.String(length=kwargs.get("max_length"), collation=kwargs.get("collation"))
 
     @classmethod
     def validate(cls, **kwargs: Any) -> None:
@@ -335,7 +335,7 @@ class Text(ModelFieldFactory, str):
         :return: initialized column with proper options
         :rtype: sqlalchemy Column
         """
-        return sqlalchemy.Text()
+        return sqlalchemy.Text(collation=kwargs.get("collation"))
 
 
 class Float(ModelFieldFactory, float):
