@@ -1,5 +1,7 @@
 from typing import Any, Dict, List, Optional, Set, TYPE_CHECKING, TypeVar, Union
 
+from databases.backends.sqlite import SQLiteBackend
+
 import ormar.queryset  # noqa I100
 from ormar.exceptions import ModelPersistenceError, NoMatch
 from ormar.models import NewBaseModel  # noqa I100
@@ -93,8 +95,10 @@ class Model(ModelRow):
 
         pkname = self.Meta.pkname
         is_need_load_pk = True
+        not_need_set_pk = (not self.Meta.model_fields[pkname].autoincrement and
+                           isinstance(self.Meta.database._backend, SQLiteBackend))
         pk = await self.Meta.database.execute(expr)
-        if pk and isinstance(pk, self.pk_type()):
+        if pk and isinstance(pk, self.pk_type()) and not not_need_set_pk:
             setattr(self, pkname, pk)
             is_need_load_pk = False
 
